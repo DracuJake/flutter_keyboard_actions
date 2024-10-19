@@ -40,7 +40,13 @@ class KeyboardActionsItem {
   /// set the value of [displayArrows] to `false`
   final MainAxisAlignment toolbarAlignment;
 
-  const KeyboardActionsItem({
+
+  /// for customized arrow color and title
+  final Color? arrowColor;
+  final Color? arrowDisableColor;
+  final Widget? title;
+
+  const KeyboardActionsItem( {
     required this.focusNode,
     this.onTapAction,
     this.toolbarButtons,
@@ -50,5 +56,8 @@ class KeyboardActionsItem {
     this.displayDoneButton = true,
     this.footerBuilder,
     this.toolbarAlignment = MainAxisAlignment.end,
+    this.arrowColor,
+    this.arrowDisableColor,
+    this.title,
   });
 }

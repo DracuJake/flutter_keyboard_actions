@@ -542,11 +542,11 @@ class KeyboardActionstate extends State<KeyboardActions>
                   icon: Icon(Icons.keyboard_arrow_down),
                   tooltip: 'Next',
                   iconSize: IconTheme.of(context).size!,
-                  color: IconTheme.of(context).color,
-                  disabledColor: Theme.of(context).disabledColor,
+                  color: _currentAction?.arrowColor ?? IconTheme.of(context).color,
+                  disabledColor: _currentAction?.arrowDisableColor  ?? Theme.of(context).disabledColor,
                   onPressed: _nextIndex != null ? _onTapDown : null,
                 ),
-                const Spacer(),
+                _currentAction?.title != null ? Expanded(child: _currentAction!.title!) :const Spacer(),
               ],
               if (_currentAction?.displayDoneButton != null &&
                   _currentAction!.displayDoneButton &&
